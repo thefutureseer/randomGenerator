@@ -1,0 +1,89 @@
+//write a random password generater function
+//add any character, int, symbol
+//1. arrays to get the randoms
+//2. know what typeof the input is and tell the function to 
+//add that typeof x3(or whatever client asks for) each put them all into an array
+
+//loop through the array randomly to spit out the password
+const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,];
+const caps = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
+const low =  ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+const symbl = ['`','~','!','@','#','$','%','^','&','*','(',')','_','-','=','+','{','[',];
+
+//Push each to an array collecting them randomly?
+const getNumOfCharsTogether = [];
+
+
+//click the generate password get prompts and 
+var generateBtn = document.querySelector("#generate");
+
+//run loop the number of times
+function loopForCharacters(num, typechar) {  
+  
+  // console.log("out terloopfor char"+ num+ typechar)
+  //get amount of each and put them into an array
+  for(var i = 0; i <= num-1; i++){
+    // console.log("inner loop", i)
+    //run function the looped amount of times and push each into
+    //the array for new Password
+    //run helper function with that number
+   
+    function howMany(typeofchar) {
+      //do random character from typeofchar
+      console.log("howmany type of char", typeofchar);
+      getNumOfCharsTogether.push(caps[Math.floor(Math.random()*8)]);
+      console.log(getNumOfCharsTogether, "chars together array");
+    };
+      howMany(typechar);
+   };
+ }
+
+//generatePassword function prompts
+function generatePassword() {
+  //prompt for letters, nums and symbols
+  const capitals = alert("would you like capital letters in your password?", );
+    if (capitals) {
+      var expression = capitals;
+    }
+
+  // const lowercases = prompt("would you like lowercse letters in your password?");
+  // const numbes = prompt("would you like numbers in your password?");
+  // const symbols = prompt("would you like symbols letters in your password?");
+
+  //if prompt is true push to the array as an object key=type and 
+  //value=number of times it should show up in the password
+
+  
+  //switch statement "if any of the prompts are true do this"
+  switch (expression) {
+    case capitals:
+      const typeOfCharacter = 'caps';
+      var numberOfThisOne = prompt("how many would you like?");
+      // console.log(numberOfThisOne, "num this?")
+      loopForCharacters(numberOfThisOne, typeOfCharacter);
+      // getNumOfCharsTogether.push({typeOfCharacter: numberOfThisOne});
+      break;
+
+      default:
+        //run this if nothing else
+  };
+
+  let retStr = getNumOfCharsTogether.join('');
+  // console.log("return this: ", retStr);
+
+  return retStr;
+
+};
+
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
