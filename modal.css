@@ -1,0 +1,23 @@
+body{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parent-div {
+  height:20%;
+  width: 18%;
+  /* height: 50%;
+  width: 50%;*/
+  background-color: black; 
+  /* z-index: -1; */
+}
+
+.main-modal {
+  height: 89%;
+  width: 78%;
+  margin-left: 10%;
+  background-color: azure;
+}
