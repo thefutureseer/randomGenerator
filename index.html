@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <!-- <ui:include src="modal.xhtml" /> -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
 
     <!-- Modal area -->
-    <div class="parent-div">
-      <div class="main-modal">
+    <div id="parent-div">
+      <div id="main-modal">
       <form  >
        <fieldset>
          <label ><input type="checkbox" id="capitals"  name="capitals" value="capitals">Capitals?</label> 
@@ -30,7 +29,7 @@
      </div>
 
     <!-- Password area -->
-    <div class="wrapper">
+    <div class="wrapper" id="stopWrap">
       <header>
         <h1>Password Generator</h1>
       </header>
@@ -46,9 +45,9 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
-        <!-- <form class="card-footer" >
-          <button type="submit" id="generate" class="btn">Generate Password</button>
-        </form> -->
+        <form class="card-footer" >
+          <button type="submit" id="click-for-modal" class="btn">Generate Password</button>
+        </form>
       </div>
     </div>
     <script src="script.js"></script>
