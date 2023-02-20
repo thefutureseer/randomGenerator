@@ -2,7 +2,8 @@
 //add any character, int, symbol
 //1. arrays to get the randoms
 //2. know what typeof the input is and tell the function to 
-//add that typeof x3(or whatever client asks for) each put them all into an array
+//add that typeof x3(or whatever client asks for) each put 
+//them all into an array
 
 //loop through the array randomly to spit out the password
 const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,];
@@ -19,7 +20,7 @@ var generateBtn = document.querySelector("#generate");
 
 //run loop the number of times
 function loopForCharacters(num, typechar) {  
-  
+
   // console.log("out terloopfor char"+ num+ typechar)
   //get amount of each and put them into an array
   for(var i = 0; i <= num-1; i++){
@@ -27,7 +28,7 @@ function loopForCharacters(num, typechar) {
     //run function the looped amount of times and push each into
     //the array for new Password
     //run helper function with that number
-   
+
     function howMany(typeofchar) {
       //do random character from typeofchar
       console.log("howmany type of char", typeofchar);
@@ -36,13 +37,19 @@ function loopForCharacters(num, typechar) {
     };
       howMany(typechar);
    };
+
  }
 
 //generatePassword function prompts
 function generatePassword() {
+  //go to other html file to make use of the modal
+
   //prompt for letters, nums and symbols
-  const capitals = alert("would you like capital letters in your password?", );
-    if (capitals) {
+  // const capitals = alert("would you like capital letters in your password?", );
+//put the value into motion
+const value = document.getElementById("capitals")
+  if (value) {
+    console.log("if valueß")
       var expression = capitals;
     }
 
@@ -53,7 +60,7 @@ function generatePassword() {
   //if prompt is true push to the array as an object key=type and 
   //value=number of times it should show up in the password
 
-  
+
   //switch statement "if any of the prompts are true do this"
   switch (expression) {
     case capitals:
@@ -68,22 +75,20 @@ function generatePassword() {
         //run this if nothing else
   };
 
-  let retStr = getNumOfCharsTogether.join('');
   // console.log("return this: ", retStr);
-
-  return retStr;
+  return getNumOfCharsTogether.join('');
 
 };
 
-
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+const writePassword =  (e) => {
+  e.preventDefault();
+  // var password = 
 
-  passwordText.value = password;
-
+document.getElementById("password").value = generatePassword(); 
+  // console.log('write pw value? & queryselector', passwordText, password);
+  // passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click",  writePassword);
