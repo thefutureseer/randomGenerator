@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/modal.css">
-  <!-- <ui:include src="index.xhtml" /> -->
-</head>
-<body>
-  <div class="parent-div">
-   <div class="main-modal">
-   <form action="index.html" >
-    <fieldset>
-      <label ><input type="checkbox" id="capitals"  name="capitals" value="capitals">Capitals?</label> 
-      <!-- <input type="checkbox" value="caps" id="capitals" name="capitals">-->
-      <!-- <label for="capital">Capitals?</label>
-      <input type="checkbox" id="capital">
-      <label for="capita">Capitals?</label>
-      <input type="checkbox" id="capita">
-      <label for="cap">Capitals?</label>
-      <input type="checkbox" id="cap"> -->
-      <input type="submit" id="generate" value="submit" >
-    </fieldset>
-  </form> 
-   </div>
-  </div>
-  <script src="./script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <!-- <ui:include src="modal.xhtml" /> -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+
+    <!-- Modal area -->
+    <div class="parent-div">
+      <div class="main-modal">
+      <form  >
+       <fieldset>
+         <label ><input type="checkbox" id="capitals"  name="capitals" value="capitals">Capitals?</label> 
+         <!-- <input type="checkbox" value="caps" id="capitals" name="capitals">-->
+         <!-- <label for="capital">Capitals?</label>
+         <input type="checkbox" id="capital">
+         <label for="capita">Capitals?</label>
+         <input type="checkbox" id="capita">
+         <label for="cap">Capitals?</label>
+         <input type="checkbox" id="cap"> -->
+         <input type="submit" id="generate" value="submit" >
+       </fieldset>
+     </form> 
+      </div>
+     </div>
+
+    <!-- Password area -->
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <!-- <form class="card-footer" >
+          <button type="submit" id="generate" class="btn">Generate Password</button>
+        </form> -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
