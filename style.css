@@ -21,7 +21,6 @@ body {
 }
 
 .parent-div {
-  /* display: none; */
   height:20%;
   width: 18%;
   /* height: 50%;
@@ -30,7 +29,8 @@ body {
   /* z-index: -1; */
 }
 
-.main-modal {
+#main-modal {
+  display: none;
   height: 89%;
   width: 78%;
   margin-left: 10%;
@@ -40,7 +40,7 @@ body {
 /* Password css  */
 
 .wrapper {
-  /* display: none; */
+  /* display: block ; */
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
