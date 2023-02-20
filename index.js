@@ -14,9 +14,11 @@ const symbl = ['`','~','!','@','#','$','%','^','&','*','(',')','_','-','=','+','
 //Push each to an array collecting them randomly?
 const getNumOfCharsTogether = [];
 
-
 //click the generate password get prompts and 
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.getElementById("generate");
+var wrapp = document.getElementById("stopWrap");
+var clickForMod = document.getElementById("click-for-modal");
+var mainModal = document.getElementById("main-modal");
 
 //run loop the number of times
 function loopForCharacters(num, typechar) {  
@@ -60,7 +62,6 @@ const value = document.getElementById("capitals")
   //if prompt is true push to the array as an object key=type and 
   //value=number of times it should show up in the password
 
-
   //switch statement "if any of the prompts are true do this"
   switch (expression) {
     case capitals:
@@ -84,11 +85,18 @@ const value = document.getElementById("capitals")
 const writePassword =  (e) => {
   e.preventDefault();
   // var password = 
-
-document.getElementById("password").value = generatePassword(); 
+  wrapp.style.display = "block";
+  mainModal.style.display = "none";
+  document.getElementById("password").value = generatePassword(); 
   // console.log('write pw value? & queryselector', passwordText, password);
   // passwordText.value = password;
-}
+};
+
+document.getElementById("click-for-modal").addEventListener("click", (e) => {
+  e.preventDefault();
+  wrapp.style.display = "none";
+  mainModal.style.display = "block";
+});
 
 // Add event listener to generate button
 generateBtn.addEventListener("click",  writePassword);
